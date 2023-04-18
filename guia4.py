@@ -50,5 +50,23 @@ b=np.array([[10],[15],[15],[10]])
 y=np.linalg.solve(L,b)
 x=np.linalg.solve(U,y)
 
-print(x)
+# print(x)
 
+# Mx=np.array([[3,-5,9],[8,7,-6],[-5,-8,3],[2,-2,9]])
+# b=np.array([[-4],[-8],[-6],[-5]])
+
+# print(b.shape)
+#y=np.linalg.solve(Mx,b)
+# w=np.array([[1],[3],[-4]])
+# D=np.array([[3,-5,-3],[6,-2,0],[-8,4,1]])
+
+# print(D@w)
+
+w=np.array([[1],[2],[1],[0]])
+E=np.array([[-8,5,-2,0],[-5,2,1,-2],[10,-8,6,3],[3,-2,1,0]])
+
+z=E@w
+j=np.linalg.solve(E,w)
+
+print(z)
+print(j)

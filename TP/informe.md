@@ -7,6 +7,8 @@ institute: "UTDT"
 date: "21/04/2023"
 ---
 
+\pagebreak
+
 ### Ideas Generales con respecto al trabajo
 \
 Nuestro objetivo en este trabajo práctico es estudiar el comportamiento de una variable dependiente en relación al un conjunto de variables explicativas para lo cual recurrimos a un modelo de Regresión Lineal Múltiple, en el proceso de plantear este modelo debemos encontrar la fórmula para la solución óptima de $\beta^\ast$ (formula para el coeficiente general de las variables explicativas)
@@ -169,20 +171,60 @@ Que es la formula de la solución óptima al problema de regresión.
 
   \pagebreak
 
-
-
-
-
 2. Usando los datos del archivo ejercicio_2.csv:
 
-    (a) Graficar y aproximar los puntos con una recta.
-    
-    <img src='imagen3.png'></img>
+  (a) Graficar y aproximar los puntos con una recta.
+  
+  ![](imagen5.png "")
 
-    En el gráfico podemos ver todas las observaciones de nuestra muestra. Se puede notar una relacion lineal negativa entre ambas variables.
+  En el gráfico podemos ver todas las observaciones de nuestra muestra. Se puede notar una relacion lineal negativa entre ambas variables.
 
-    (b) Imaginemos que los datos forman parte de mediciones de algún tipo, como por ejemplo la temperatura de un procesador a lo largo del tiempo, y queremos predecir cuál va a ser la temperatura en el futuro. ¿Es buena la aproximación que realizamos?, ¿cuál fue el problema en este caso?
+  (b) Imaginemos que los datos forman parte de mediciones de algún tipo, como por ejemplo la temperatura de un procesador a lo largo del tiempo, y queremos predecir cuál va a ser la temperatura en el futuro. ¿Es buena la aproximación que realizamos?, ¿cuál fue el problema en este caso?
 
-      - Si agarramos un valor de $x$ muy elevado, generaria un valor de $y$ muy bajo. Si por ejemplo, se estuviese midiendo la temperatura, un valor muy grande en los numeros negativos no tendria sentido, por lo tanto, podríamos decir que nuestro modelo de regresión solamente funciona para parametrso relativamente chicos. Ese punto con un $x$ muy grande seria un Outlier.
+  Si agarramos un valor de $x$ muy elevado, generaria un valor de $y$ muy bajo. Si por ejemplo, se estuviese midiendo la temperatura, un valor muy grande en los numeros negativos no tendria sentido, por lo tanto, podríamos decir que nuestro modelo de regresión solamente funciona para parametrso relativamente chicos. Ese punto con un $x$ muy grande seria un Outlier.
+\pagebreak
 
+### Tercera parte. En esta sección la idea es realizar regresión lineal con datos reales.
 
+\
+1. Teniendo en cuenta la teoría desarrollada en la primer parte del trabajo práctico y usando los datos de entrenamiento
+
+  (a) Estimar los parámetros $\hat{\beta}$ que minimizan el error cuadrático medio para este problema
+
+  Gracias a la formula calculada en la primera parte y de la misma forma que lo calculamos en la segunda parte, usamos la formula de $\hat{\beta}$ para calcularlo: $\hat{\beta} = $
+
+  (b) Encontrar $\hat{y}$ la estimación de la variable de respuesta.
+
+  Simplemente hacemos el reemplazo en nuestra regresión lineal por el valor $X$ de los datos observados
+
+  (C) ¿Cuánto vale el error cuadrático medio?
+
+  Definimos error cuadrático medio como
+
+  $$ECM(\hat{y}) = \dfrac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})^2$$
+
+  donde $y_i$ son observaciones de una variable y \hat{y_i} estimaciones de las mismas.
+
+  $ECM_e = xx$
+
+  $ECM_t = xx$
+
+2. Utilizando los datos de test, analizar cuál es el error cuadrático medio al utilizar los parámetros $\hat{\beta}$ estimados en el punto anterior.
+
+  (a) ¿Es la estimación mejor que sobre los datos originales?, ¿a qué se debe la discrepancia?
+
+  Este $ECM$ nos dio menor al $ECM$ calculado con los datos de entrenamiento. Esto podría deberse a que los valores de test se encuentran más cercanos a la aproximación que se realiza y los datos de entrenamiento presentan puntos mucho más lejanos, estos serían los Outliers.
+
+  (b) ¿Qué sucede con el $ECM$ del segundo conjunto de casas si se realiza la regresión sobre todos los datos al mismo tiempo (es decir, las 414 casas)?
+
+3. Graficar el error cometido por cada casa. Es decir el valor absoluto de la diferencia entre el precio por Ping real y el estimado.
+
+  ![](imagen6.png "")
+
+  En este grafico podemos ver la diferencia de el $y$ real y el $y_{obs}$.
+
+  Gracias a este gráfico podemos notar los como las observaciones de la 1 a la 315 presentan muchas distorsiones con respecto al valor real de $y$ principalemnte vemos como existe un valor que se sobresale del resto, siendo este un Outlier, principal responsable de que nuestra estimación no sea tan buena.
+
+4. Imaginemos que se agrega una nueva columna a los datos que informa el año en que la misma fue construida. ¿Disminuiría esto el $ECM$?
+
+  Si agregaramos una columna que indicase el año de construcción de cada casa, esa columna no estaria agregando nada de información, puesto que la columna de edad de las casas me da esa misma información. Agregar una columna que no genera nueva información no mejora el modelo.

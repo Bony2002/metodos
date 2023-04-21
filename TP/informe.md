@@ -19,117 +19,124 @@ Nuestro objetivo en este trabajo práctico es estudiar el comportamiento de una 
 
 <br>
 
-- a) Mostrar que el espacio columna de la matriz $X$ es un subespacio vectorial de $R^n$: $Col(X)$ = {b en $R^n$ tales que $b=X\beta$ con $\beta$ variando en $R^p$}
-
-    - Para probar que el espacio columna de la matriz $X$ es un subespacio vectorial de $R^n$ debemos ver que:
-
-      - El vector cero pertenece a $Col(X)$
-
-        - Esto es verdadero pues podemos notar que si uno reemplaza $\beta$ por cero ( **0** $\in R^p$), la ecuación resultado será $X0 = b = 0$. Esto podría pasar en una hipotética situación en donde mi ecuación resultado quedaría de la siguiente manera.
-
-        $$y = x_10 + x_20 + ... + x_n0 = 0$$
-
-      - Para cada **u** y **v** en $Col(X)$, la suma **u** $+$ **v** está en $Col(X)$
-
-        - Siendo $u=X\beta_u$ y $v=X\beta_v$ , vemos que $u+v = X\beta_u + X\beta_v = X(\beta_u + \beta_v)$ y como sabemos que $\beta \in R^p$ afirmamos que $\beta_u + \beta_v = \beta_{u+v} \in R^p$.
-
-        - Por lo tanto $u+v = X\beta_{u+v}$ seguro está en $Col(X)$
-
-      - Para cada **u** en $Col(X)$ y cada escalar $c$, el vector $c$**u** está en $Col(X)$
-
-        - Siendo $cu=cX\beta_u$ puedo afirmar que, como $\beta \in R^p$, $c\beta \in R^p$.
-        
-        - Por lo tanto $cX\beta_u = cu \in Col(X)$
+(a) Mostrar que el espacio columna de la matriz $X$ es un subespacio vectorial de $R^n$: $Col(X)$ = {b en $R^n$ tales que $b=X\beta$ con $\beta$ variando en $R^p$}
 
 <br>
 
-- b) Supongamos que cuando hablamos de vectores en $R^n$ nos referimos a vectores columna de $R^{nx1}$. Mostrar en ese caso que el producto escalar entre dos vectores u, v en Rn puede calcularse como: $u \cdot v = v^Tu$ donde operación en el lado derecho de la igualdad es el producto de matrices usual.
+Para probar que el espacio columna de la matriz $X$ es un subespacio vectorial de $R^n$ debemos ver que:
 
-    - Sabiendo que el producto escalar entre dos vectores $u,v$ es:
+  - El vector cero pertenece a $Col(X)$
 
-    $$u \cdot v = \sum_{i=1}^{n} u_iv_i = u_1v_1 + u_2v_2 + ... + u_nv_n$$
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Y sabiendo que la multiplicacion $v^Tu$ es:
+    Esto es verdadero pues podemos notar que si uno reemplaza $\beta$ por cero ( **0** $\in R^p$), la ecuación resultado será $X0 = b = 0$. Esto podría pasar en una hipotética situación en donde mi ecuación resultado quedaría de la siguiente manera.
 
-    $$\begin{bmatrix}v_1 & v_2 & ... & v_n\end{bmatrix} \begin{bmatrix}u_1 \\ u_2 \\ ... \\ u_n\end{bmatrix} = u_1v_1 + u_2v_2 + ... + u_nv_n$$
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Gracias a esto podemos ver ambos lados de la ecuacion concluyen en el mismo resultado.
+    $$y = x_10 + x_20 + ... + x_n0 = 0$$
+
+  - Para cada **u** y **v** en $Col(X)$, la suma **u** $+$ **v** está en $Col(X)$
+
+    Siendo $u=X\beta_u$ y $v=X\beta_v$ , vemos que $u+v = X\beta_u + X\beta_v = X(\beta_u + \beta_v)$ y como sabemos que $\beta \in R^p$ afirmamos que $\beta_u + \beta_v = \beta_{u+v} \in R^p$.
+
+    Por lo tanto $u+v = X\beta_{u+v}$ seguro está en $Col(X)$
+
+  - Para cada **u** en $Col(X)$ y cada escalar $c$, el vector $c$**u** está en $Col(X)$
+
+    Siendo $cu=cX\beta_u$ puedo afirmar que, como $\beta \in R^p$, $c\beta \in R^p$.
+    
+    Por lo tanto $cX\beta_u = cu \in Col(X)$
 
 <br>
 
-- c) Aplicando el teorema tomando como subespacio $S$ el subespacio del ítem (a), el punto $y$ de $R^n$ como el vector de la variable dependiente, y el vector $b$ como $b=X\beta^\ast$, convertir esta ecuación de optimalidad:
+(b) Supongamos que cuando hablamos de vectores en $R^n$ nos referimos a vectores columna de $R^{nx1}$. Mostrar en ese caso que el producto escalar entre dos vectores u, v en Rn puede calcularse como: $u \cdot v = v^Tu$ donde operación en el lado derecho de la igualdad es el producto de matrices usual.
+
+<br>
+
+Sabiendo que el producto escalar entre dos vectores $u,v$ es:
+
+$$u \cdot v = \sum_{i=1}^{n} u_iv_i = u_1v_1 + u_2v_2 + ... + u_nv_n$$
+
+Y sabiendo que la multiplicacion $v^Tu$ es:
+
+$$\begin{bmatrix}v_1 & v_2 & ... & v_n\end{bmatrix} \begin{bmatrix}u_1 \\ u_2 \\ ... \\ u_n\end{bmatrix} = u_1v_1 + u_2v_2 + ... + u_nv_n$$
+
+Gracias a esto podemos ver ambos lados de la ecuacion concluyen en el mismo resultado.
+
+<br>
+
+(c) Aplicando el teorema tomando como subespacio $S$ el subespacio del ítem (a), el punto $y$ de $R^n$ como el vector de la variable dependiente, y el vector $b$ como $b=X\beta^\ast$, convertir esta ecuación de optimalidad:
 
   $$||y-X\beta^\ast|| = \max_{\beta \in R^p} ||y-X\beta||$$
 
-  en la condición de ortogonalidad que corresponde a la equivalencia 2 del teorema.
+en la condición de ortogonalidad que corresponde a la equivalencia 2 del teorema.
 
-    - Segun lo establecido en el ítem (a) podemos decir que como el subespacio S es igual a Col(X) podemos entender todo valor s $\in$ S como $X\beta = s$
+<br>
 
-    - Además, por enunciado podemos decir que $X\beta^\ast = b$
+Segun lo establecido en el ítem (a) podemos decir que como el subespacio S es igual a Col(X) podemos entender todo valor s $\in$ S como $X\beta = s$
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Por lo tanto, la ecuación luego de los reemplazos termina siendo la siguiente:
+Además, por enunciado podemos decir que $X\beta^\ast = b$
+
+Por lo tanto, la ecuación luego de los reemplazos termina siendo la siguiente:
 
   $$||y-b|| = \max_{s \in S} ||y-s||$$
 
-    Esta ecuacion corresponde a la equivalencia 1 del teorema, demostrando que la misma se cumple para estos parametros. Como llegamos a ver que esta parte del teorema se cumple, podemos afirmar que la equivalencia 2 del mismo teorema también se cumple.
+Esta ecuacion corresponde a la equivalencia 1 del teorema, demostrando que la misma se cumple para estos parametros. Como llegamos a ver que esta parte del teorema se cumple, podemos afirmar que la equivalencia 2 del mismo teorema también se cumple.
 
 <br>
 
-- d) A la ecuación obtenida en el ítem (c), aplicarle la identidad del producto escalar vista en el item (b), para llegar a la ecuación:
+(d) A la ecuación obtenida en el ítem (c), aplicarle la identidad del producto escalar vista en el item (b), para llegar a la ecuación:
 
   $$X^T(y - X\beta^\ast)\cdot \beta = 0$$
 
+<br>
 
-  - La ecuacion obtenida en el item (c) es la siguiente:
-    
-  $$(y-b) \cdot s = 0 \; \forall \; s \in S$$
+La ecuacion obtenida en el item (c) es la siguiente:
+  
+$$(y-b) \cdot s = 0 \; \forall \; s \in S$$
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  que es igual a, por lo visto en el item (c):
 
-  $$(y-X\beta^\ast) \cdot X\beta = 0$$
+que es igual a, por lo visto en el item (c):
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  y al aplicarle la identidad del producto escalar, se trasnforma en:
+$$(y-X\beta^\ast) \cdot X\beta = 0$$
 
-  $$X^T \cdot (y-X\beta^\ast) \cdot \beta = 0$$
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  que es lo que queriamos.
+y al aplicarle la identidad del producto escalar, se trasnforma en:
+
+$$X^T \cdot (y-X\beta^\ast) \cdot \beta = 0$$
+
+
+que es lo que queriamos.
 
 <br>
 
-- e) Se sabe que el único vector que es ortogonal a todo vector $v$ de $R^n$ es el vector nulo. Es decir, si $u$ es un vector fijo tal que $u\cdot v = 0$ para todo $v$ en $R^n$, entonces $u = 0$. Usando esto y la ecuación obtenida en el ítem (d), llegar a la fórmula: $X^TX\beta^\ast$ $=$ $X^Ty$
-
-    - La ecuacion obtenida en el item (d) es la siguiente:
-    
-  $$X^T \cdot (y-X\beta^\ast) \cdot \beta = 0$$
-
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  Como sabemos que $\beta$ es un vector en $R^n$ podemos afirmar por la propiedad de la consigna que:
-
-  $$X^T \cdot (y-X\beta^\ast) = 0$$
-
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  De esta ecuacion podemos simplemente distribuir la multiplicación de la matriz $X^T$, reordenar los termino y llegar a la ecuación objetivo:
-
-  $$ X^TX\beta^\ast = X^Ty $$
+(e) Se sabe que el único vector que es ortogonal a todo vector $v$ de $R^n$ es el vector nulo. Es decir, si $u$ es un vector fijo tal que $u\cdot v = 0$ para todo $v$ en $R^n$, entonces $u = 0$. Usando esto y la ecuación obtenida en el ítem (d), llegar a la fórmula: $X^TX\beta^\ast$ $=$ $X^Ty$
 
 <br>
 
-- f) Finalmente, suponiendo que las columnas de $X$ son linealmente independientes, se tiene que la matriz $X^TX$ es invertible. Despejar $\beta^\ast$ de la ecuación del ítem (e) para llegar a la fórmula de la solución óptima al problema de regresión.
+La ecuacion obtenida en el item (d) es la siguiente:
+  
+$$X^T \cdot (y-X\beta^\ast) \cdot \beta = 0$$
 
-  - La ecuacion obtenida en el item (e) es la siguiente:
-    
-  $$ X^TX\beta^\ast = X^Ty $$
+Como sabemos que $\beta$ es un vector en $R^n$ podemos afirmar por la propiedad de la consigna que:
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  Gracias a que $X^TX$ es invertible podemos transformarla en:
+$$X^T \cdot (y-X\beta^\ast) = 0$$
 
-  $$ \beta^\ast = (X^TX)^{-1} \cdot X^Ty  $$
+De esta ecuacion podemos simplemente distribuir la multiplicación de la matriz $X^T$, reordenar los termino y llegar a la ecuación objetivo:
 
-  Que es la formula de la solución óptima al problema de regresión.
+$$ X^TX\beta^\ast = X^Ty $$
+
+<br>
+
+(f) Finalmente, suponiendo que las columnas de $X$ son linealmente independientes, se tiene que la matriz $X^TX$ es invertible. Despejar $\beta^\ast$ de la ecuación del ítem (e) para llegar a la fórmula de la solución óptima al problema de regresión.
+
+<br>
+
+La ecuacion obtenida en el item (e) es la siguiente:
+  
+$$X^TX\beta^\ast = X^Ty$$
+
+Gracias a que $X^TX$ es invertible podemos transformarla en:
+
+$$\beta^\ast = (X^TX)^{-1} \cdot X^Ty$$
+
+Que es la formula de la solución óptima al problema de regresión.
 
 <br>
 
@@ -139,25 +146,27 @@ Nuestro objetivo en este trabajo práctico es estudiar el comportamiento de una 
 
 1. Usando los datos del archivo ejercicio_1.csv:
     
-    - a) Graficar todos los puntos en el plano xy. 
-    <center>
-    ![la lune](imagen1.png "Voyage to the moon")
+  (a) Graficar todos los puntos en el plano xy. 
+  
+  ![Grafico 1](imagen1.png "En el gráfico podemos ver todas las observaciones de nuestra muestra. Se puede notar una posible relación lineal entre ambas variables.")
 
-    En el gráfico podemos ver todas las observaciones de nuestra muestra. Se puede notar una posible relación lineal entre ambas variables.
+  <br>
 
-    </center>
+  (b) Utilizando los conceptos teóricos desarrollados en la primera parte, hallar la recta que mejor aproxima a los datos.
+  
+  ![Grafico 1](imagen2.png "En el gráfico podemos ver la superposicion de nuestras observaciones y de nuestra estimación de la recta")
 
-    - b) Utilizando los conceptos teóricos desarrollados en la primera parte, hallar la recta que mejor aproxima a los datos.
-    
-    <img src='imagen2.png'></img>
+  La recta que mejor aproxima a mis datos será $y = X\hat{\beta}$, como $\hat{\beta}$ está en $R^1$ mi recta quedará de la siguiente manera $y = x\hat{\beta_1}$ siendo $\hat{\beta_1}$ la estimación del coeficiente de la primera variable independiente.
 
-    La recta que mejor aproxima a mis datos será $y = X\hat{\beta}$, como $\hat{\beta}$ está en $R^1$ mi recta quedará de la siguiente manera $y = x\hat{\beta_1}$ siendo $\hat{\beta_1}$ la estimación del coeficiente de la primera variable independiente.
+  <br>
+  
+  (c) Realizar nuevamente los incisos (a) y (b) pero considerando los puntos {$(x_i, y_i + 12)$ con $i=1\dots n$} donde $(x_i, y_i)$ eran los puntos originales. ¿Es buena la aproximación realizada?, ¿cuál es el problema?
 
-    - c) Realizar nuevamente los incisos (a) y (b) pero considerando los puntos {$(x_i, y_i + 12)$ con $i=1\dots n$} donde $(x_i, y_i)$ eran los puntos originales. ¿Es buena la aproximación realizada?, ¿cuál es el problema?
+    - Esta aproximacion no es buena. El problema con esta es que cuando se hace este tipo de regresion, no se esta teniendo el cuenta la ordenada al origen. Como todos los puntos aumentan en 12 unidades en la cordenanda Y, la ordenada al origen tambien aumenta en 12. En nuestra modelo de regresión no tenemos ningun parametro para la ordenada al origen.
 
-      - Esta aproximacion no es buena. El problema con esta es que cuando se hace este tipo de regresion, no se esta teniendo el cuenta la ordenada al origen. Como todos los puntos aumentan en 12 unidades en la cordenanda Y, la ordenada al origen tambien aumenta en 12. En nuestra modelo de regresión no tenemos ningun parametro para la ordenada al origen.
+    <br>
 
-    - d) ¿Cómo se podría extender el modelo para poder aproximar cualquier recta en el plano?
+    (d) ¿Cómo se podría extender el modelo para poder aproximar cualquier recta en el plano?
 
       - Esto se podria solucionar agregando un $\beta_0$ que sea la ordenada al origen para poder estabilizar el gráfico.
 
@@ -176,13 +185,13 @@ Nuestro objetivo en este trabajo práctico es estudiar el comportamiento de una 
 
 2. Usando los datos del archivo ejercicio_2.csv:
 
-    - a) Graficar y aproximar los puntos con una recta.
+    (a) Graficar y aproximar los puntos con una recta.
     
     <img src='imagen3.png'></img>
 
     En el gráfico podemos ver todas las observaciones de nuestra muestra. Se puede notar una relacion lineal negativa entre ambas variables.
 
-    - b) Imaginemos que los datos forman parte de mediciones de algún tipo, como por ejemplo la temperatura de un procesador a lo largo del tiempo, y queremos predecir cuál va a ser la temperatura en el futuro. ¿Es buena la aproximación que realizamos?, ¿cuál fue el problema en este caso?
+    (b) Imaginemos que los datos forman parte de mediciones de algún tipo, como por ejemplo la temperatura de un procesador a lo largo del tiempo, y queremos predecir cuál va a ser la temperatura en el futuro. ¿Es buena la aproximación que realizamos?, ¿cuál fue el problema en este caso?
 
       - Si agarramos un valor de $x$ muy elevado, generaria un valor de $y$ muy bajo. Si por ejemplo, se estuviese midiendo la temperatura, un valor muy grande en los numeros negativos no tendria sentido, por lo tanto, podríamos decir que nuestro modelo de regresión solamente funciona para parametrso relativamente chicos. Ese punto con un $x$ muy grande seria un Outlier.
 

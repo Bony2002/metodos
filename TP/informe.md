@@ -41,6 +41,7 @@ Para probar que el espacio columna de la matriz $X$ es un subespacio vectorial d
     Por lo tanto $cX\beta_u = cu \in Col(X)$
 
 \pagebreak
+\
 (b) Supongamos que cuando hablamos de vectores en $R^n$ nos referimos a vectores columna de $R^{nx1}$. Mostrar en ese caso que el producto escalar entre dos vectores u, v en Rn puede calcularse como: $u \cdot v = v^Tu$ donde operación en el lado derecho de la igualdad es el producto de matrices usual.
 \
 
@@ -80,18 +81,37 @@ Esta ecuacion corresponde a la equivalencia 1 del teorema, demostrando que la mi
 
 La ecuacion obtenida en el item (c) es la siguiente:
   
-$$(y-b) \cdot s = 0 \; \forall \; s \in S$$
+$$(y-X\beta^\ast) \cdot X\beta = 0 \; \forall \; \beta \in R^p$$
 
-que es igual a, por lo visto en el item (c):
+Llamando a $u=(y-X\beta^\ast)$ y $v=X\beta$ $\Rightarrow$
 
-$$(y-X\beta^\ast) \cdot X\beta = 0$$
+$$u \cdot v=0$$
 
-y al aplicarle la identidad del producto escalar, se trasnforma en:
+y al aplicarle la identidad del producto escalar, se transforma en:
 
-$$X^T \cdot (y-X\beta^\ast) \cdot \beta = 0$$
+$$v^T \cdot u=0 \Rightarrow (X\beta)^T \cdot (y-X\beta^\ast) = 0$$ 
 
-que es lo que queriamos.
+Ahora aplicamos la propiedad de la traspuesta sobre $(X\beta)^T$ de manera que $(X\beta)^T = \beta^TX^T$
 
+$$\beta^T(X^T \cdot (y-X\beta^\ast)) = 0$$
+
+Ahora tenemos que $k=\beta^T$ y $j=(X^T \cdot (y-X\beta^\ast))$ 
+
+con $\beta^T \in R^p$ , $X^T \in R^{p \cdot n}$ y $(y-X\beta^\ast) \in R^p$ 
+
+$\Rightarrow$ $\beta^T \in R^p$ y $(X^T \cdot (y-X\beta^\ast)) \in R^p$
+
+Por lo tanto tenemos que:
+
+$$k \cdot j=0$$
+
+y al aplicarle la identidad del producto escalar, se transforma en:
+
+$$j \cdot k^T=0 \Rightarrow X^T \cdot (y-X\beta^\ast) \cdot (\beta^T)^T = X^T \cdot (y-X\beta^\ast) \cdot \beta = 0$$
+
+Que es lo que quería
+
+\pagebreak
 \
 (e) Se sabe que el único vector que es ortogonal a todo vector $v$ de $R^n$ es el vector nulo. Es decir, si $u$ es un vector fijo tal que $u\cdot v = 0$ para todo $v$ en $R^n$, entonces $u = 0$. Usando esto y la ecuación obtenida en el ítem (d), llegar a la fórmula: $X^TX\beta^\ast$ $=$ $X^Ty$
 \
@@ -205,9 +225,9 @@ Que es la formula de la solución óptima al problema de regresión.
 
   donde $y_i$ son observaciones de una variable y $\hat{y_i}$ estimaciones de las mismas.
 
-  $ECM_e = 82.9635$
+  $ECM_e = 82.975$
 
-  $ECM_t = 58.2295$
+  $ECM_t = 58.454$
 
 \
 2. Utilizando los datos de test, analizar cuál es el error cuadrático medio al utilizar los parámetros $\hat{\beta}$ estimados en el punto anterior.
@@ -220,7 +240,7 @@ Que es la formula de la solución óptima al problema de regresión.
 
   Cuando se realiza la regresión sobre todos los datos al mismo tiempo mi $ECM$ se parece mucho más al $ECM_t$ que al $ECM_e$.
 
-  $ECM_t = 57.1206$
+  $ECM_t = 57.278$
 
   Suponemos que esto se debe a que, si bien ahora se incluyen los datos que proporcionaron información que rompía nuestro modelo en el $ECM_e$, estos no son lo suficientes como para contrarrestar la gran magnitud de datos que en el $ECM_t$ son más acertados, es decir, que en los datos totales hay más datos con información más acertada que logra contrarrestar los datos no acertados que están en los datos de $experimento$.
 

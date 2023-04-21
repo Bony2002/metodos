@@ -40,7 +40,7 @@ Para probar que el espacio columna de la matriz $X$ es un subespacio vectorial d
     
     Por lo tanto $cX\beta_u = cu \in Col(X)$
 
-\
+\pagebreak
 (b) Supongamos que cuando hablamos de vectores en $R^n$ nos referimos a vectores columna de $R^{nx1}$. Mostrar en ese caso que el producto escalar entre dos vectores u, v en Rn puede calcularse como: $u \cdot v = v^Tu$ donde operación en el lado derecho de la igualdad es el producto de matrices usual.
 \
 
@@ -191,24 +191,25 @@ Que es la formula de la solución óptima al problema de regresión.
 
   (a) Estimar los parámetros $\hat{\beta}$ que minimizan el error cuadrático medio para este problema
 
-  Gracias a la formula calculada en la primera parte y de la misma forma que lo calculamos en la segunda parte, usamos la formula de $\hat{\beta}$ para calcularlo: $\hat{\beta} = $
+  Gracias a la formula calculada en la primera parte y de la misma forma que lo calculamos en la segunda parte, usamos la formula de $\hat{\beta}$ para calcularlo: $\hat{\beta}$
 
   (b) Encontrar $\hat{y}$ la estimación de la variable de respuesta.
 
   Simplemente hacemos el reemplazo en nuestra regresión lineal por el valor $X$ de los datos observados
 
-  (C) ¿Cuánto vale el error cuadrático medio?
+  (c) ¿Cuánto vale el error cuadrático medio?
 
   Definimos error cuadrático medio como
 
   $$ECM(\hat{y}) = \dfrac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})^2$$
 
-  donde $y_i$ son observaciones de una variable y \hat{y_i} estimaciones de las mismas.
+  donde $y_i$ son observaciones de una variable y $\hat{y_i}$ estimaciones de las mismas.
 
   $ECM_e = xx$
 
   $ECM_t = xx$
 
+\
 2. Utilizando los datos de test, analizar cuál es el error cuadrático medio al utilizar los parámetros $\hat{\beta}$ estimados en el punto anterior.
 
   (a) ¿Es la estimación mejor que sobre los datos originales?, ¿a qué se debe la discrepancia?
@@ -217,6 +218,9 @@ Que es la formula de la solución óptima al problema de regresión.
 
   (b) ¿Qué sucede con el $ECM$ del segundo conjunto de casas si se realiza la regresión sobre todos los datos al mismo tiempo (es decir, las 414 casas)?
 
+  # Falta Responder
+
+\
 3. Graficar el error cometido por cada casa. Es decir el valor absoluto de la diferencia entre el precio por Ping real y el estimado.
 
   ![](imagen6.png "")
@@ -225,6 +229,7 @@ Que es la formula de la solución óptima al problema de regresión.
 
   Gracias a este gráfico podemos notar los como las observaciones de la 1 a la 315 presentan muchas distorsiones con respecto al valor real de $y$ principalemnte vemos como existe un valor que se sobresale del resto, siendo este un Outlier, principal responsable de que nuestra estimación no sea tan buena.
 
+\
 4. Imaginemos que se agrega una nueva columna a los datos que informa el año en que la misma fue construida. ¿Disminuiría esto el $ECM$?
 
   Si agregaramos una columna que indicase el año de construcción de cada casa, esa columna no estaria agregando nada de información, puesto que la columna de edad de las casas me da esa misma información. Agregar una columna que no genera nueva información no mejora el modelo.

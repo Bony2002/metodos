@@ -8,20 +8,15 @@ date: "21/04/2023"
 ---
 
 ### Ideas Generales con respecto al trabajo
-
-<br>
-
+\
 Nuestro objetivo en este trabajo práctico es estudiar el comportamiento de una variable dependiente en relación al un conjunto de variables explicativas para lo cual recurrimos a un modelo de Regresión Lineal Múltiple, en el proceso de plantear este modelo debemos encontrar la fórmula para la solución óptima de $\beta^\ast$ (formula para el coeficiente general de las variables explicativas)
-
-<br>
+\
 
 ### Primera parte. El objetivo de esta sección es deducir una fórmula para la solución óptima $\beta^\ast$ siguiendo los pasos a continuación:
 
-<br>
-
+\
 (a) Mostrar que el espacio columna de la matriz $X$ es un subespacio vectorial de $R^n$: $Col(X)$ = {b en $R^n$ tales que $b=X\beta$ con $\beta$ variando en $R^p$}
-
-<br>
+\
 
 Para probar que el espacio columna de la matriz $X$ es un subespacio vectorial de $R^n$ debemos ver que:
 
@@ -43,11 +38,9 @@ Para probar que el espacio columna de la matriz $X$ es un subespacio vectorial d
     
     Por lo tanto $cX\beta_u = cu \in Col(X)$
 
-<br>
-
+\
 (b) Supongamos que cuando hablamos de vectores en $R^n$ nos referimos a vectores columna de $R^{nx1}$. Mostrar en ese caso que el producto escalar entre dos vectores u, v en Rn puede calcularse como: $u \cdot v = v^Tu$ donde operación en el lado derecho de la igualdad es el producto de matrices usual.
-
-<br>
+\
 
 Sabiendo que el producto escalar entre dos vectores $u,v$ es:
 
@@ -59,15 +52,13 @@ $$\begin{bmatrix}v_1 & v_2 & ... & v_n\end{bmatrix} \begin{bmatrix}u_1 \\ u_2 \\
 
 Gracias a esto podemos ver ambos lados de la ecuacion concluyen en el mismo resultado.
 
-<br>
-
+\
 (c) Aplicando el teorema tomando como subespacio $S$ el subespacio del ítem (a), el punto $y$ de $R^n$ como el vector de la variable dependiente, y el vector $b$ como $b=X\beta^\ast$, convertir esta ecuación de optimalidad:
 
   $$||y-X\beta^\ast|| = \max_{\beta \in R^p} ||y-X\beta||$$
 
 en la condición de ortogonalidad que corresponde a la equivalencia 2 del teorema.
-
-<br>
+\
 
 Segun lo establecido en el ítem (a) podemos decir que como el subespacio S es igual a Col(X) podemos entender todo valor s $\in$ S como $X\beta = s$
 
@@ -79,36 +70,29 @@ Por lo tanto, la ecuación luego de los reemplazos termina siendo la siguiente:
 
 Esta ecuacion corresponde a la equivalencia 1 del teorema, demostrando que la misma se cumple para estos parametros. Como llegamos a ver que esta parte del teorema se cumple, podemos afirmar que la equivalencia 2 del mismo teorema también se cumple.
 
-<br>
-
+\
 (d) A la ecuación obtenida en el ítem (c), aplicarle la identidad del producto escalar vista en el item (b), para llegar a la ecuación:
 
   $$X^T(y - X\beta^\ast)\cdot \beta = 0$$
-
-<br>
+\
 
 La ecuacion obtenida en el item (c) es la siguiente:
   
 $$(y-b) \cdot s = 0 \; \forall \; s \in S$$
 
-
 que es igual a, por lo visto en el item (c):
 
 $$(y-X\beta^\ast) \cdot X\beta = 0$$
-
 
 y al aplicarle la identidad del producto escalar, se trasnforma en:
 
 $$X^T \cdot (y-X\beta^\ast) \cdot \beta = 0$$
 
-
 que es lo que queriamos.
 
-<br>
-
+\
 (e) Se sabe que el único vector que es ortogonal a todo vector $v$ de $R^n$ es el vector nulo. Es decir, si $u$ es un vector fijo tal que $u\cdot v = 0$ para todo $v$ en $R^n$, entonces $u = 0$. Usando esto y la ecuación obtenida en el ítem (d), llegar a la fórmula: $X^TX\beta^\ast$ $=$ $X^Ty$
-
-<br>
+\
 
 La ecuacion obtenida en el item (d) es la siguiente:
   
@@ -118,15 +102,15 @@ Como sabemos que $\beta$ es un vector en $R^n$ podemos afirmar por la propiedad 
 
 $$X^T \cdot (y-X\beta^\ast) = 0$$
 
+\
+\
 De esta ecuacion podemos simplemente distribuir la multiplicación de la matriz $X^T$, reordenar los termino y llegar a la ecuación objetivo:
 
 $$ X^TX\beta^\ast = X^Ty $$
 
-<br>
-
+\
 (f) Finalmente, suponiendo que las columnas de $X$ son linealmente independientes, se tiene que la matriz $X^TX$ es invertible. Despejar $\beta^\ast$ de la ecuación del ítem (e) para llegar a la fórmula de la solución óptima al problema de regresión.
-
-<br>
+\
 
 La ecuacion obtenida en el item (e) es la siguiente:
   
@@ -137,51 +121,57 @@ Gracias a que $X^TX$ es invertible podemos transformarla en:
 $$\beta^\ast = (X^TX)^{-1} \cdot X^Ty$$
 
 Que es la formula de la solución óptima al problema de regresión.
-
-<br>
+\pagebreak
 
 ### Segunda parte. En esta sección la idea es realizar regresión lineal en $R^2$ y analizar como se comportan las soluciones obtenidas.
 
-<br>
-
+\
 1. Usando los datos del archivo ejercicio_1.csv:
     
   (a) Graficar todos los puntos en el plano xy. 
-  
-  ![Grafico 1](imagen1.png "En el gráfico podemos ver todas las observaciones de nuestra muestra. Se puede notar una posible relación lineal entre ambas variables.")
 
-  <br>
+  ![](imagen1.png "")
+
+  En el gráfico podemos ver todas las observaciones de nuestra muestra. Se puede notar una posible relación lineal entre ambas variables.
+
+  \pagebreak
 
   (b) Utilizando los conceptos teóricos desarrollados en la primera parte, hallar la recta que mejor aproxima a los datos.
   
-  ![Grafico 1](imagen2.png "En el gráfico podemos ver la superposicion de nuestras observaciones y de nuestra estimación de la recta")
+  ![](imagen2.png "")
+
+  En el gráfico podemos ver la superposicion de nuestras observaciones y de nuestra estimación de la recta
 
   La recta que mejor aproxima a mis datos será $y = X\hat{\beta}$, como $\hat{\beta}$ está en $R^1$ mi recta quedará de la siguiente manera $y = x\hat{\beta_1}$ siendo $\hat{\beta_1}$ la estimación del coeficiente de la primera variable independiente.
-
-  <br>
   
+  \pagebreak
+
   (c) Realizar nuevamente los incisos (a) y (b) pero considerando los puntos {$(x_i, y_i + 12)$ con $i=1\dots n$} donde $(x_i, y_i)$ eran los puntos originales. ¿Es buena la aproximación realizada?, ¿cuál es el problema?
 
-    - Esta aproximacion no es buena. El problema con esta es que cuando se hace este tipo de regresion, no se esta teniendo el cuenta la ordenada al origen. Como todos los puntos aumentan en 12 unidades en la cordenanda Y, la ordenada al origen tambien aumenta en 12. En nuestra modelo de regresión no tenemos ningun parametro para la ordenada al origen.
+  ![](imagen3.png "")
 
-    <br>
+  Esta aproximacion no es buena. El problema con esta es que cuando se hace este tipo de regresion, no se esta teniendo el cuenta la ordenada al origen. Como todos los puntos aumentan en 12 unidades en la cordenanda Y, la ordenada al origen tambien aumenta en 12. En nuestra modelo de regresión no tenemos ningun parametro para la ordenada al origen.
 
-    (d) ¿Cómo se podría extender el modelo para poder aproximar cualquier recta en el plano?
+  \pagebreak
+  
+  (d) ¿Cómo se podría extender el modelo para poder aproximar cualquier recta en el plano?
 
-      - Esto se podria solucionar agregando un $\beta_0$ que sea la ordenada al origen para poder estabilizar el gráfico.
+  Esto se podria solucionar agregando un $\beta_0$ que sea la ordenada al origen para poder estabilizar el gráfico.
+  
+  Para calcular $\beta_0$ agregamos una columna de unos adelante de la matriz $X$. Agregamos una columna de unos para que cuando hagamos $X\beta$ $\Rightarrow$
+  $$\begin{bmatrix}\beta_0 + \beta_1x_{11} + ... + \beta_px_{1p} \\ \beta_0 + \beta_1x_{21} + ... + \beta_px_{2p} \\ ... \\ \beta_0 + \beta_1x_{n1} + ... + \beta_px_{np}\end{bmatrix}$$
 
-      <br>
+  En este caso solo tendriamos $\beta_0$ y $\beta_1$:
 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      Para calcular $\beta_0$ agregamos una columna de unos adelante de la matriz $X$. Agregamos una columna de unos para que cuando hagamos $X\beta$ $\Rightarrow$
-      $$\begin{bmatrix}\beta_0 + \beta_1x_{11} + ... + \beta_px_{1p} \\ \beta_0 + \beta_1x_{21} + ... + \beta_px_{2p} \\ ... \\ \beta_0 + \beta_1x_{n1} + ... + \beta_px_{np}\end{bmatrix}$$
+  $$\begin{bmatrix}\beta_0 + \beta_1x_{11} \\ \beta_0 + \beta_1x_{21} \\ ... \\ \beta_0 + \beta_1x_{n1}\end{bmatrix}$$
 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      En este caso solo tendriamos $\beta_0$ y $\beta_1$:
+  ![](imagen4.png "")
 
-      $$\begin{bmatrix}\beta_0 + \beta_1x_{11} \\ \beta_0 + \beta_1x_{21} \\ ... \\ \beta_0 + \beta_1x_{n1}\end{bmatrix}$$
+  \pagebreak
 
-<br>
+
+
+
 
 2. Usando los datos del archivo ejercicio_2.csv:
 

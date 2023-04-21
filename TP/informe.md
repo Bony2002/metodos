@@ -141,7 +141,7 @@ Nuestro objetivo en este trabajo práctico es estudiar el comportamiento de una 
     
     - a) Graficar todos los puntos en el plano xy. 
     <center>
-     <img src='imagen1.png' border="5px" ></img> 
+    ![la lune](imagen1.png "Voyage to the moon")
 
     En el gráfico podemos ver todas las observaciones de nuestra muestra. Se puede notar una posible relación lineal entre ambas variables.
 

@@ -191,7 +191,7 @@ Que es la formula de la solución óptima al problema de regresión.
 
   (a) Estimar los parámetros $\hat{\beta}$ que minimizan el error cuadrático medio para este problema
 
-  Gracias a la formula calculada en la primera parte y de la misma forma que lo calculamos en la segunda parte, usamos la formula de $\hat{\beta}$ para calcularlo: $\hat{\beta}$
+  Gracias a la formula calculada en la primera parte y de la misma forma que lo calculamos en la segunda parte, usamos la formula de $\hat{\beta}$ para calcularlo.
 
   (b) Encontrar $\hat{y}$ la estimación de la variable de respuesta.
 
@@ -205,9 +205,9 @@ Que es la formula de la solución óptima al problema de regresión.
 
   donde $y_i$ son observaciones de una variable y $\hat{y_i}$ estimaciones de las mismas.
 
-  $ECM_e = xx$
+  $ECM_e = 82.9635$
 
-  $ECM_t = xx$
+  $ECM_t = 58.2295$
 
 \
 2. Utilizando los datos de test, analizar cuál es el error cuadrático medio al utilizar los parámetros $\hat{\beta}$ estimados en el punto anterior.
@@ -218,7 +218,11 @@ Que es la formula de la solución óptima al problema de regresión.
 
   (b) ¿Qué sucede con el $ECM$ del segundo conjunto de casas si se realiza la regresión sobre todos los datos al mismo tiempo (es decir, las 414 casas)?
 
-  # Falta Responder
+  Cuando se realiza la regresión sobre todos los datos al mismo tiempo mi $ECM$ se parece mucho más al $ECM_t$ que al $ECM_e$.
+
+  $ECM_t = 57.1206$
+
+  Suponemos que esto se debe a que, si bien ahora se incluyen los datos que proporcionaron información que rompía nuestro modelo en el $ECM_e$, estos no son lo suficientes como para contrarrestar la gran magnitud de datos que en el $ECM_t$ son más acertados, es decir, que en los datos totales hay más datos con información más acertada que logra contrarrestar los datos no acertados que están en los datos de $experimento$.
 
 \
 3. Graficar el error cometido por cada casa. Es decir el valor absoluto de la diferencia entre el precio por Ping real y el estimado.
